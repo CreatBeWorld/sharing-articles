@@ -1,0 +1,82 @@
+.article-card{
+	margin: 20rpx;
+	padding: 20rpx;
+	border-radius: 10rpx;
+	box-shadow: 0 0 10px 2rpx rgba(0, 0, 0, 0.1);
+	@include flex;
+	.image-container{
+		width: 120rpx;
+		height: 120rpx;
+		border-radius: 10rpx;
+		flex-shrink: 0;
+		overflow: hidden;
+		image{
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.article-card-content{
+		flex: 1;
+		margin-left: 20rpx;
+	}
+	.article-card-content-text{
+		width: 100%;
+		@include flex;
+		align-items: flex-start;
+		font-size: 28rpx;
+		color: #333333;
+		font-weight: 400;
+		text{
+			overflow: hidden;
+			text-overflow: ellipsis;
+			/*因使用了WebKit的CSS扩展属性，下面的css代码仅适用于WebKit浏览器及移动端*/
+			display: -webkit-box;// 将元素作为弹性伸缩盒子模型显示
+			-webkit-line-clamp: 2; // 显示2行
+			-webkit-box-orient: vertical;// 设置文字的排列方向
+
+		}
+	}
+	.article-card-content-desc{
+		width: 100%;
+		margin-top: 20rpx;
+		font-size: 24rpx;
+		@include flex;
+		.article-type{
+			color: $base-color;
+			padding: 0 10rpx;
+			border-radius: 30rpx;
+			border: 1px solid $base-color;
+		}
+		.article-bc{
+			color: $c-9;
+			line-height: 1.5;
+		}
+	}
+	/* mode:column */
+	&.mode-column{
+		@include flex(flex-start,column);
+		.images-container{
+			@include flex;
+			width: 100%;
+			margin: 20rpx 0;
+			image{
+				width: 32%;
+				height: 140rpx;
+				border-radius: 10rpx;
+			}
+		}
+	}
+	/* mode:image */
+	&.mode-image{
+		@include flex(flex-start,column);
+		.big-image-container{
+			width: 100%;
+			height: 200rpx;
+			margin-bottom: 20rpx;
+			image{
+				width:100%;
+				height: 100%;
+			}
+		}
+	}
+}

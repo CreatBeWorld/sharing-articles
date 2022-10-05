@@ -1,9 +1,11 @@
 /**
  * name {String} 云函数名
  */
-export default (name,data={})=>{
+export default (name,data={},isLoadingShow=true)=>{
 	return new Promise((resolve,reject)=>{
-		uni.showLoading({}) // 显示loading提示框
+		if(isLoadingShow){
+			uni.showLoading({}) // 显示loading提示框
+		}
 		// 调用云函数
 		uniCloud.callFunction({
 			name,
@@ -22,7 +24,9 @@ export default (name,data={})=>{
 				reject(err)
 			},
 			complete(){
-				uni.hideLoading() //隐藏loading提示框
+				if(isLoadingShow){
+					uni.hideLoading() //隐藏loading提示框
+				}
 			}
 		})
 	})
