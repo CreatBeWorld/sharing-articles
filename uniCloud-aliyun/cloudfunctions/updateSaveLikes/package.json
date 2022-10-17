@@ -1,0 +1,7 @@
+{
+  "name": "updateSaveLikes",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}

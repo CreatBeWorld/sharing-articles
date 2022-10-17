@@ -1,0 +1,13 @@
+{
+  "hash": "7b0086f7",
+  "browserHash": "23b7871b",
+  "optimized": {
+    "marked": {
+      "src": "../../node_modules/marked/lib/marked.esm.js",
+      "file": "marked.js",
+      "fileHash": "d66daffe",
+      "needsInterop": false
+    }
+  },
+  "chunks": {}
+}

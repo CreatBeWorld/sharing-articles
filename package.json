@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "mp-html": "^2.4.0",
+    "uni-crazy-router": "^1.1.2"
+  },
+  "devDependencies": {
+    "uni-vite-plugin-h5-prod-effect": "^1.0.1"
+  }
+}

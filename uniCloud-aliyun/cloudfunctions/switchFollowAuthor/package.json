@@ -1,0 +1,7 @@
+{
+  "name": "switchFollowAuthor",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}

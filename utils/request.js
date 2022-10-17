@@ -4,7 +4,9 @@
 export default (name,data={},isLoadingShow=true)=>{
 	return new Promise((resolve,reject)=>{
 		if(isLoadingShow){
-			uni.showLoading({}) // 显示loading提示框
+			uni.showLoading({
+				title:'加载中'
+			}) // 显示loading提示框
 		}
 		// 调用云函数
 		uniCloud.callFunction({

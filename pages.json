@@ -19,13 +19,66 @@
             "path" : "pages/self/self",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "我的",
+                "navigationBarTitleText": "用户信息",
                 "enablePullDownRefresh": false
             }
             
         }
         ,{
             "path" : "pages/search/search",
+            "style" :                                                                                    
+            {
+               "navigationStyle":"custom"// 设置导航栏的样式：自定义
+            }
+            
+        }
+        ,{
+            "path" : "pages/user/login/login",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "用户登录",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/labelAdminPage/labelAdminPage",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "标签管理",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/articleDetail/articleDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "文章详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/commentListPage/commentListPage",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "评论列表",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/myArticle/myArticle",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的文章",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/feedBack/feedBack",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
@@ -36,7 +89,7 @@
     ],
  "globalStyle": {
     "navigationBarTextStyle": "white",// 导航栏标题颜色及状态栏前景颜色
-    "navigationBarTitleText": "渡一教育",// 导航栏标题文字内容？？？
+    "navigationBarTitleText": "sharing-articles",// 导航栏标题文字内容（整个应用）
     "navigationBarBackgroundColor": "#f25037",// 导航栏背景颜色
     "backgroundColor": "#F8F8F8"// 下拉显示出来的窗口的背景色
   },

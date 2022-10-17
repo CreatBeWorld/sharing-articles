@@ -9,7 +9,7 @@
 			</view>
 		</scroll-view>
 		<!-- 设置图标 -->
-		<view class="tab-bar-icon">
+		<view class="tab-bar-icon" @click="toLabelAdminPage">
 			<uni-icons type="gear" size="26" color="#666"></uni-icons>
 		</view>
 	</view>
@@ -21,6 +21,7 @@
 </script>
 <script setup>
 	import {toRef,ref,watch} from "vue"
+	import userLoginStore from '/common/userCommon.js'
 	// 获取父组件传递过来的属性数据
 	const props= defineProps({
 		labelList:{
@@ -35,6 +36,7 @@
 	const $emit = defineEmits(['update:activeIndex'])
 	// 定义数据
 	const currentIndex = ref('item0')
+	const {checkIsLogin} = userLoginStore() //检查是否登录
 	// 监听属性数据变化（也可以使用computed）
 	watch(()=>props.activeIndex,()=>{
 		currentIndex.value = 'item'+props.activeIndex
@@ -46,6 +48,12 @@
 	// 方法
 	const changeActiveIndex = index=>{
 		$emit('update:activeIndex',index)
+	}
+	const toLabelAdminPage = async ()=>{
+		await checkIsLogin()
+		uni.navigateTo({
+			url:'/pages/labelAdminPage/labelAdminPage'
+		})
 	}
 </script>
 

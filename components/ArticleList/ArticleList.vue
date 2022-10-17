@@ -36,10 +36,6 @@
 	*/
 	const loadingData = ref({}) 
 	const pageSize = ref(6) //滑块每页显示多少条数据
-	// 监听数据变化,完成全部文章数据的获取
-	watch(()=>props.labelList,()=>{
-		fetchArticleData(0)
-	})
 	// 定义方法
 	// current改变时change事件的处理函数
 	const changeActiveIndex = e=>{
@@ -81,11 +77,19 @@
 		loadingData.value[index].page++
 		fetchArticleData(index)
 	}
+	// 监听数据变化,完成全部文章数据的获取
+	watch(()=>props.labelList,(newVal,oldVal)=>{
+		if(oldVal&&JSON.stringify(newVal)===JSON.stringify(oldVal)){
+			return
+		}
+		articleData.value = {}
+		loadingData.value = {}
+		fetchArticleData(0)
+	},{immediate:true})
 </script>
 
-<style scoped lang="scss">
-	.article-content{
+<style  lang="scss">
+	.article-list-container,.article-content{
 		height: 100%;
-		overflow: hidden;
 	}
 </style>
